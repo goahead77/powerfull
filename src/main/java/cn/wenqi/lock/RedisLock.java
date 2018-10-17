@@ -75,7 +75,8 @@ public class RedisLock implements Lock {
                 if (RedisMock.lock(lockKey) && compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
-                }
+                }else
+                    RedisMock.unlock(lockKey);//如果有其中一个失败，则先释放redis锁
             }
             else if (current == getExclusiveOwnerThread()) {
                 int nextc = c + acquires;

@@ -9,8 +9,6 @@ import redis.clients.jedis.Jedis;
 public class RedisPoolUtil {
     private RedisPoolUtil(){}
 
-    private static RedisPool redisPool;
-
     public static String get(String key){
         Jedis jedis = null;
         String result = null;
