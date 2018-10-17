@@ -1,13 +1,15 @@
 package cn.wenqi;
 
 import cn.wenqi.lock.RedisLock;
+import org.junit.Test;
 
-/**
- * Hello world!
- */
-public class App {
-    public static void main(String[] args) {
+import static org.junit.Assert.assertTrue;
 
+
+public class LockTest {
+
+    @Test
+    public void redisLockTest() {
         RedisLock redisLock=new RedisLock("abc");
 
 

@@ -1,8 +1,5 @@
 package cn.wenqi.redis;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
 /**
  * @author wenqi
  * @since v
@@ -10,8 +7,6 @@ import java.util.concurrent.ConcurrentMap;
 public class RedisMock {
 
     private RedisMock(){}
-
-    private static final ConcurrentMap<String,String> map=new ConcurrentHashMap<>();
 
     public static boolean lock(String key){
         long rs=RedisPoolUtil.setnx(key,String.valueOf(System.currentTimeMillis()));
